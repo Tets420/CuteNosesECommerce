@@ -7,10 +7,10 @@ Cute Noses Online Store will be your one-stop-shop for all things pet-related, o
 ##### User Authentication and Authorization:
 To ensure a secure and personalized experience, users will be required to register by providing their credentials, including:
 
-*username
-*password
-*email address (for notification purposes)
-*mailing address (for delivery purposes).
+-username
+-password
+-email address (for notification purposes)
+-mailing address (for delivery purposes).
 
 This step will allow users to access their account, manage their orders, and maintain their preferences seamlessly.
 
@@ -29,10 +29,10 @@ The checkout process will be streamlined to provide a hassle-free experience. Us
 ##### Order History:
 Customers can easily access their order history, which will display a list of their past purchases, details including
 
-*picture and price of the purchase
-*timestamp of the purchase
-*delivery address
-*order status.
+-picture and price of the purchase
+-timestamp of the purchase
+-delivery address
+-order status.
 
 This page will allow users to track their orders conveniently and ensure a transparent shopping experience.
 
@@ -59,8 +59,8 @@ To cater to different user preferences and enhance accessibility, the store will
 
 The Cute Noses Online Store will feature an analogous color theme,
 
-*#ffe8d1, #ffffd1, and #e8ffd1 warm and inviting shades for the light theme
-*#180f0c, #181806, and #0c1806 rich and cozy tones for the dark theme
+-#ffe8d1, #ffffd1, and #e8ffd1 warm and inviting shades for the light theme
+-#180f0c, #181806, and #0c1806 rich and cozy tones for the dark theme
 
 These color schemes will be complemented by a playful and endearing brand identity inspired by George and Uno
 
