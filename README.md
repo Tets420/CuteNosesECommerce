@@ -60,8 +60,8 @@ To cater to different user preferences and enhance accessibility, the store will
 
 The Cute Noses Online Store will feature an analogous color theme,
 
--#ffe8d1, #ffffd1, and #e8ffd1 warm and inviting shades for the light theme
--#180f0c, #181806, and #0c1806 rich and cozy tones for the dark theme
+* #ffe8d1, #ffffd1, and #e8ffd1 warm and inviting shades for the light theme
+* #180f0c, #181806, and #0c1806 rich and cozy tones for the dark theme
 
 These color schemes will be complemented by a playful and endearing brand identity inspired by George and Uno
 
