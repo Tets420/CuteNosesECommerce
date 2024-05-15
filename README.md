@@ -7,19 +7,20 @@ Cute Noses Online Store will be your one-stop-shop for all things pet-related, o
 ##### User Authentication and Authorization:
 To ensure a secure and personalized experience, users will be required to register by providing their credentials, including:
 
--username
--password
--email address (for notification purposes)
--mailing address (for delivery purposes).
+
+* username
+* password
+* email address (for notification purposes)
+* mailing address (for delivery purposes).
 
 This step will allow users to access their account, manage their orders, and maintain their preferences seamlessly.
 
 ##### Product Management:
 Users will have access to a **virtual cart** that will display their current purchases and a wishlist for items they'd like to consider for future purchases. The intuitive interface will allow users to easily:
 
-*add or remove items
-*adjust quantities
-*review their selections before proceeding to checkout.
+* add or remove items
+* adjust quantities
+* review their selections before proceeding to checkout.
 
 ##### Checkout Process:
 The checkout process will be streamlined to provide a hassle-free experience. Users will have the option to pay via cash on delivery or through **GCash, a popular local payment method or a cash on delivery option**. In the future, the store aims to integrate additional online payment APIs to offer more payment options to customers.
@@ -29,10 +30,10 @@ The checkout process will be streamlined to provide a hassle-free experience. Us
 ##### Order History:
 Customers can easily access their order history, which will display a list of their past purchases, details including
 
--picture and price of the purchase
--timestamp of the purchase
--delivery address
--order status.
+* picture and price of the purchase
+* timestamp of the purchase
+* delivery address
+* order status.
 
 This page will allow users to track their orders conveniently and ensure a transparent shopping experience.
 
