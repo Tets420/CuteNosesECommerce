@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %} Shopping Page {% endblock %}
+{% block main %}
+<div class="container">
+    <div class="row">
+            <select class="row form-control-row" onchange="filterProducts(this.value)">
+                <option value="all" {% if selected_category == "all" %}selected{% endif %}>All Categories</option>
+                {% for category in categories %}
+                <option value="{{ category.categoryID }}" {% if selected_category == category.categoryID|string %} selected {% endif %}>{{ category.name }}</option>
+                {% endfor %}
+            </select>
+    </div>
+    <div class="row" id="product-grid">
+        {% for product in products %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 product-card">
+                {% if product.productimageURL %}
+                <img class="card-img-top" src="{{ product.productimageURL }}" alt="{{ product.productname }}">
+                {% else %}
+                <img class="card-img-top" src="{{ url_for('static', filename='placeholder.jpg') }}" alt="Placeholder Image">
+                {% endif %}
+                <div class="card-body">
+                    <h4 class="card-title">{{ product.productname }}</h4>
+                    <p class="card-text">{{ product.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <h5>{{ product.price | usd }}</h5>
+                </div>
+                <div class="add-to-cart-form" style="display: none;">
+                    <form method="POST" action="/add_to_cart?productID={{ product.productID }}">
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" class="form-control quantity-input" name="quantity" min="1" value="1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    function filterProducts(categoryId) {
+        window.location.href = '/?category=' + categoryId;
+    }
+
+    // Show the "Add to Cart" form on hover
+$('.product-card').hover(function() {
+    $(this).find('.add-to-cart-form').show();
+    $(this).find('.quantity-input').val(1); // Reset the quantity input value to 1
+}, function() {
+    $(this).find('.add-to-cart-form').hide();
+});
+</script>
+{% endblock %}

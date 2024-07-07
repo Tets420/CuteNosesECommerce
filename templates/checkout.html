@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>Checkout Success</h1>
+<p>Your order has been placed successfully! We will send the product to the address below once we confirm payment is received</p>
+
+{% if shipping_address %}
+<h2>Shipping Address</h2>
+<p>{{ shipping_address }}</p>
+{% endif %}
+
+{% if payment_details %}
+<h2>Payment Details</h2>
+<p>{{ payment_details }}</p>
+{% endif %}
+
+<p>*Please note that non receipt of payment will cancel your order*</p>
+
+<a href="{{ url_for('index') }}">Back to shopping</a>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+{% if orders %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.orderID }}</td>
+                    <td>{{ order.orderDate }}</td>
+                    <td>{{ order.productname }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.totalAmount }}</td>
+                    <td>{{ order.orderStatus }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No order history found.</p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block main %}
+    <form action="/changepass" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="old_password" placeholder="Old Password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Password (again)" type="password" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Confirm Change Password</button>
+    </form>
+    <script>
+        const passwordInput = form.querySelector('input[name="password"]');
+        const confirmationInput = form.querySelector('input[name="confirmation"]');
+
+        confirmationInput.addEventListener('input', () => {
+            if (passwordInput.value !== confirmationInput.value) {
+                confirmationInput.setCustomValidity('Passwords do not match');
+            } else {
+                confirmationInput.setCustomValidity('');
+            }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin homepage
+{% endblock %}
+
+{% block main %}
+
+<h1>Admin Dashboard</h1>
+
+<h2>Products</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.productID }}</td>
+            <td>{{ product.productname }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.categoryID }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Orders</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Customer</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Order Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.orderID }}</td>
+            <td>{{ order.orderDate }}</td>
+            <td>{{ order.username }}</td>
+            <td>{{ order.productname }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.totalAmount }}</td>
+            <td>{{ order.orderStatus }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

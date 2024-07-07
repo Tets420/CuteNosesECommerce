@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <form action="/register" method="post" id="register-form">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Account Details</h3>
+
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control" name="username" placeholder="username" type="text" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" name="email" placeholder="Email" type="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" name="password" placeholder="Password" type="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" name="confirmation" placeholder="password (again)" type="password" required>
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <h3>Billing Address</h3>
+                <div class="mb-3">
+                    <input class="form-control" name="billing_street" placeholder="Street Address" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="billing_city" placeholder="City" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="billing_province" placeholder="Province" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="billing_zip" placeholder="Zip Code" type="text" required>
+                </div>
+                <button class="btn btn-secondary" id="copy-billing-address">Shipping Address Same as Billing</button>
+            </div>
+            <div class="col-md-4">
+                <h3>Shipping Address</h3>
+                <div class="mb-3">
+                    <input class="form-control" name="shipping_street" placeholder="Street Address" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="shipping_city" placeholder="City" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="shipping_province" placeholder="Province" type="text" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="shipping_zip" placeholder="Zip Code" type="text" required>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" form="register-form">Register</button>
+    </form>
+    </div>
+
+    <script>
+        // ... (password confirmation script)
+
+        const billingStreetInput = document.querySelector('input[name="billing_street"]');
+        const billingCityInput = document.querySelector('input[name="billing_city"]');
+        const billingProvinceInput = document.querySelector('input[name="billing_province"]');
+        const billingZipInput = document.querySelector('input[name="billing_zip"]');
+
+        const shippingStreetInput = document.querySelector('input[name="shipping_street"]');
+        const shippingCityInput = document.querySelector('input[name="shipping_city"]');
+        const shippingProvinceInput = document.querySelector('input[name="shipping_province"]');
+        const shippingZipInput = document.querySelector('input[name="shipping_zip"]');
+
+        const copyBillingAddressButton = document.querySelector('#copy-billing-address');
+
+        copyBillingAddressButton.addEventListener('click', () => {
+            shippingStreetInput.value = billingStreetInput.value;
+            shippingCityInput.value = billingCityInput.value;
+            shippingProvinceInput.value = billingProvinceInput.value;
+            shippingZipInput.value = billingZipInput.value;
+        });
+    </script>
+{% endblock %}
